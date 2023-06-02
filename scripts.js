@@ -1,18 +1,43 @@
-let myName = document.getElementById('name');
-let myEmail = document.getElementById('email');
+const registerForm = document.forms.register;
 
-document.querySelector('button').addEventListener('click', () => {
-    var users = JSON.parse(localStorage.getItem('users'));
+document.getElementById('register-form').addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    if(users == null) 
-        users = [];
-
-    var user = {
-        name: myName.value,
-        email: myEmail.value,
+    const name = registerForm.name.value;
+    const email =  registerForm.email.value;
+    
+    const userAlreadyExists = checkIfUserAlreadyExists(email);
+    
+    if(userAlreadyExists) {
+        alert('Seu usuário já está em nossas bases de dados!');
+        return;
     }
+    
+    const user = { name, email };
+    
+    saveUser(user);
+    resetForm();
 
-    users.push(user);
+    alert('Dados cadastrados com sucesso!');
+});
 
+function saveUser(user) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const userId = users.length + 1;
+    
+    users.push({
+        id: userId,
+        ...user
+    });
+    
     localStorage.setItem('users', JSON.stringify(users));
-})
+}
+
+function checkIfUserAlreadyExists(email) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    return users.find(user => user.email === email);
+}
+
+function resetForm() {
+    registerForm.reset();
+}
