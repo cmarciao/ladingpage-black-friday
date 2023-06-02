@@ -1,43 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     
     <title>Document</title>
 </head>
 <body>
-    
-    <header>
-        <div>
-            <h1 class="black">BLACK</h1>
-            <h1>FRIDAY</h1>
-            <h1 class="black">DISCOUNT</h1>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <div>
+                <h1 class="black">BLACK</h1>
+                <h1>FRIDAY</h1>
+                <h1 class="black">DISCOUNT</h1>
+            </div>
+        </header>
 
-    <main>
-        <div class="center">
-            <h1>Acesse nossos produtos!</h1>
-            <p>Cadastre seu email para ficar ligado em todas as nossas promoções, será o maior descontão que nossa loja já teve em toda a sua história, com produtos com até 80% de desconto, vai ficar de fora? Então vamos lá.</p>
-    
-            <form action="">
-                <input type="text" placeholder="Informe o seu nome completo" id="name">
-                <input type="text" placeholder="Informe o seu email" id="email">
-                <button type="button">Cadastrar</button>
-            </form>
-        </div>
-    </main>
+        <main>
+            <div class="center">
+                <h1>Acesse nossos produtos!</h1>
+                <p>Cadastre seu email para ficar ligado em todas as nossas promoções, será o maior descontão que nossa loja já teve em toda a sua história, com produtos com até 80% de desconto, vai ficar de fora? Então vamos lá.</p>
+        
+                <form id="register-form" name="register">
+                    <input
+                        name="name"
+                        required
+                        placeholder="Informe o seu nome completo"
+                    />
+                    <input
+                        name="email"
+                        required
+                        placeholder="Informe o seu email"
+                    />
+                    
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </main>
 
-    <footer>&copy; 2021, by Cássio Marcião</footer>
+        <footer>&copy; 2021, by Cássio Marcião</footer>
+    </div>
 
-    <script type="text/javascript" src="./scripts.js"></script>
+    <script defer type="text/javascript" src="./scripts.js"></script>
 </body>
 </html>
